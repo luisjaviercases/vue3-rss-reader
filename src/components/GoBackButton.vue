@@ -1,3 +1,3 @@
 <template>
-  <button @click="$router.back()">Atrás</button>
+  <button @click="$router.back()">{{ $t("goBackComponent.back") }}</button>
 </template>
