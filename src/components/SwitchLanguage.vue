@@ -1,9 +1,9 @@
 <template>
-  <div class="language-container">
-    <span class="language-container--title">
+  <div class="switch-language">
+    <span class="switch-language__title">
       {{ $t("switchLanguage.select") }}
     </span>
-    <select class="language-container--selector" v-model="$i18n.locale">
+    <select class="switch-language__selector" v-model="$i18n.locale">
       <option v-for="lang in langs" :key="'lang-' + lang" :value="lang">
         {{ lang }}
       </option>
@@ -23,19 +23,19 @@ export default {
 };
 </script>
 
-<style>
-.language-container {
+<style scoped>
+.switch-language {
   display: flex;
   align-items: center;
 }
 
-.language-container--title {
-  margin-right: 12px;
+.switch-language__title {
+  margin-right: 0.75em;
 }
 
-.language-container--selector {
-  width: 70px;
-  height: 25px;
-  font-size: 18px;
+.switch-language__selector {
+  width: 4em;
+  height: 1.75em;
+  font-size: 0.75em;
 }
 </style>

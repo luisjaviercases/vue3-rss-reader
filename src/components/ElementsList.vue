@@ -1,26 +1,42 @@
 <template>
-  <div class="ui cards" style="margin: 10px">
-    <div v-if="state.fetching"><h2>Fetching Data!</h2></div>
-    <ul class="elements-list">
+  <div>
+    <SearchInput @updatedQuery="updateparent" />
+    <span>{{ $t("elementList.info") }}</span>
+    <button @click="sortBy('pubDate')">
+      {{ $t("elementList.orderTitle") }}
+      {{
+        sorting.field === "pubDate"
+          ? sorting.orderBy
+            ? $t("elementList.ascending")
+            : $t("elementList.descending")
+          : ""
+      }}
+    </button>
+    <div v-if="state.fetching">
+      <h2>{{ $t("elementList.loading") }}</h2>
+    </div>
+    <ul>
       <ListItem
-        v-for="product in orderProducts"
-        :key="product.id"
-        :item="product"
-        @click="addElement(product)"
+        v-for="item in orderItems"
+        :key="item.id"
+        :item="item"
+        @click="addElement(item)"
       />
     </ul>
   </div>
 </template>
 
 <script>
-import { computed, reactive } from "vue";
+import { computed, reactive, ref } from "vue";
 import { useFetch } from "@/hooks/fetch";
 import store from "../store";
 import ListItem from "./ListItem.vue";
+import SearchInput from "./SearchInput.vue";
 
 export default {
   components: {
     ListItem,
+    SearchInput,
   },
   setup() {
     const state = reactive({
@@ -29,12 +45,50 @@ export default {
       fetching: false,
     });
 
-    const orderProducts = computed(() => {
-      return state.response;
+    const searchQuery = ref("");
+
+    /**
+     * oderBy value 1 = ascendent
+     * oderBy value 0 = descendent
+     */
+    const sorting = ref({ field: "pubDate", orderBy: 1 });
+
+    /**
+     * Return filter list (from input inserted value) ordered by date
+     */
+    const orderItems = computed(() => {
+      let aux = state.response.filter((item) => {
+        return (
+          item.title.toLowerCase().indexOf(searchQuery.value.toLowerCase()) !=
+          -1
+        );
+      });
+      return aux.sort(
+        (a, b) =>
+          new Date(a.pubDate).getTime() -
+          new Date(b.pubDate).getTime() * sorting.value.orderBy
+      );
     });
 
+    /**
+     * Save clicked element to store
+     */
     function addElement(item) {
       store.actions.setElement(item);
+    }
+
+    /**
+     * Update searchQuery value from inserted text in input by user
+     */
+    function updateparent(variable) {
+      searchQuery.value = variable;
+    }
+
+    /**
+     * Change sorting value when user clicks in button
+     */
+    function sortBy(field) {
+      sorting.value = { field, orderBy: sorting.value.orderBy ? 0 : 1 };
     }
 
     const { response, error, fetchData, fetching } = useFetch(
@@ -42,6 +96,7 @@ export default {
       {}
     );
 
+    //Call function to get data from request
     fetchData();
 
     state.response = response;
@@ -50,8 +105,12 @@ export default {
 
     return {
       state,
-      orderProducts,
+      sorting,
+      searchQuery,
+      orderItems,
       addElement,
+      updateparent,
+      sortBy,
     };
   },
 };

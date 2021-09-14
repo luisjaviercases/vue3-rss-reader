@@ -1,13 +1,17 @@
 <template>
-  <li class="item">
-    <div class="item--info">
-      <span class="title">{{ item.title }}</span>
-      <span class="date">{{ item.pubDate }}</span>
-      <p class="description">{{ parseContent(item.description) }}</p>
+  <li class="list-item">
+    <div class="list-item__info-container">
+      <span class="list-item__info-container__title">{{ item.title }}</span>
+      <span class="list-item__info-container__date">{{ item.pubDate }}</span>
+      <p class="list-item__info-container__description">
+        {{ parseContent(item.description) }}
+      </p>
       <img :src="item.thumbnail" />
     </div>
-    <div class="item--link">
-      <router-link to="/info" @click="$emit('click')"> Ver más </router-link>
+    <div class="list-item__link-contaniner">
+      <router-link to="/info" @click="$emit('click')">
+        {{ $t("listItem.viewMore") }}
+      </router-link>
     </div>
   </li>
 </template>
@@ -31,18 +35,18 @@ export default {
 </script>
 
 <style scoped>
-.item {
+.list-item {
   list-style: none;
   display: flex;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 1.5em;
 }
 
-.item:first-of-type {
+.list-item:first-of-type {
   margin-top: 0;
 }
 
-.item--info {
+.list-item__info-container {
   display: flex;
   flex: 0 0 70%;
   flex-direction: column;
@@ -50,19 +54,19 @@ export default {
   text-align: left;
 }
 
-.item--link {
+.list-item__link-contaniner {
   flex: 0 0 30%;
 }
 
-.title {
-  font-size: 24px;
+.list-item__info-container__title {
+  font-size: 1.5em;
 }
 
-.date {
-  font-size: 12px;
+.list-item__info-container__date {
+  font-size: 0.75em;
 }
 
-.description {
+.list-item__info-container__description {
   display: block;
   display: -webkit-box;
   -webkit-line-clamp: 2;

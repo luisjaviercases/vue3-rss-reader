@@ -1,9 +1,13 @@
 <template>
   <Header />
   <GoBackButton />
-  {{ state.element.title }}
-  {{ state.element.pubDate }}
-  {{ parseContent(state.element.description) }}
+  <div class="info">
+    <span class="info__title">{{ state.element.title }}</span>
+    <p class="info__description">
+      {{ parseContent(state.element.description) }}
+    </p>
+    <img :src="state.element.thumbnail" />
+  </div>
 </template>
 
 <script>
@@ -27,3 +31,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.info__title {
+  font-size: 1.5em;
+}
+</style>
