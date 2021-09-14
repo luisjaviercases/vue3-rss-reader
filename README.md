@@ -1,5 +1,7 @@
 # vue3-rss-reader
 
+Testing vue3 doing a simple RSS Reader (without web styling)
+
 ## Project setup
 ```
 npm install
