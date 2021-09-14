@@ -1,32 +1,33 @@
-import { createI18n } from 'vue-i18n'
+import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
     goBackComponent: {
-      back: 'Go back'
+      back: "Go back",
     },
     switchLanguage: {
-      select: 'Select language'
+      select: "Select language",
     },
     header: {
-      title: 'RSS Reader'
+      title: "RSS Reader",
     },
   },
   es: {
     goBackComponent: {
-      back: 'Atrás'
+      back: "Atrás",
     },
     switchLanguage: {
-      select: 'Seleccionar idioma'
+      select: "Seleccionar idioma",
     },
     header: {
-      title: 'Lector RSS'
+      title: "Lector RSS",
     },
-  }
-}
-const i18n = createI18n({
-  locale: 'en',
-  messages
-})
+  },
+};
 
-export default i18n
+const i18n = createI18n({
+  locale: "en",
+  messages,
+});
+
+export default i18n;

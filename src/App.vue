@@ -1,7 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/info">Go to Info Page</router-link>
-  </div>
   <router-view />
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="language-container">
-    <span class="language-container--title">{{ $t("switchLanguage.select") }}</span>
+    <span class="language-container--title">
+      {{ $t("switchLanguage.select") }}
+    </span>
     <select class="language-container--selector" v-model="$i18n.locale">
       <option v-for="lang in langs" :key="'lang-' + lang" :value="lang">
         {{ lang }}
