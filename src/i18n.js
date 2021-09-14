@@ -11,6 +11,20 @@ const messages = {
     header: {
       title: "RSS Reader",
     },
+    listItem: {
+      viewMore: "View more",
+    },
+    searchInput: {
+      placeholder: "Search...",
+      description: "Filter by title: ",
+    },
+    elementList: {
+      info: "Click to change: ",
+      orderTitle: "Sorted by date ",
+      ascending: "ascending",
+      descending: "descending",
+      loading: "Loading...",
+    },
   },
   es: {
     goBackComponent: {
@@ -21,6 +35,20 @@ const messages = {
     },
     header: {
       title: "Lector RSS",
+    },
+    listItem: {
+      viewMore: "Ver más",
+    },
+    searchInput: {
+      placeholder: "Buscar...",
+      description: "Filtrar por título: ",
+    },
+    elementList: {
+      info: "Click para cambiar: ",
+      orderTitle: "Ordenado ",
+      ascending: "ascendentemente",
+      descending: "descendentemente",
+      loading: "Cargando...",
     },
   },
 };
