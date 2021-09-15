@@ -24,6 +24,10 @@ const messages = {
       ascending: "ascending",
       descending: "descending",
       loading: "Loading...",
+      noResultsToShow: "No results to show",
+    },
+    addFeedInput: {
+      info: "Insert a valid feed URL and press enter key: ",
     },
   },
   es: {
@@ -49,6 +53,10 @@ const messages = {
       ascending: "ascendentemente",
       descending: "descendentemente",
       loading: "Cargando...",
+      noResultsToShow: "No hay resultados que mostrar",
+    },
+    addFeedInput: {
+      info: "Introduzca una URL válida de feed y presione la tecla enter: ",
     },
   },
 };
