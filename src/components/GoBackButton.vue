@@ -4,8 +4,10 @@
   </button>
 </template>
 
-<style scoped>
-.button--go-back {
-  margin-bottom: 0.5em;
+<style lang="scss" scoped>
+.button {
+  &--go-back {
+    margin-bottom: 0.5em;
+  }
 }
 </style>

@@ -23,19 +23,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .switch-language {
   display: flex;
   align-items: center;
-}
 
-.switch-language__title {
-  margin-right: 0.75em;
-}
-
-.switch-language__selector {
-  width: 4em;
-  height: 1.75em;
-  font-size: 0.75em;
+  &__title {
+    margin-right: 0.75em;
+  }
+  &__selector {
+    width: 4em;
+    height: 1.75em;
+    font-size: 0.75em;
+  }
 }
 </style>

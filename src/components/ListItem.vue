@@ -9,7 +9,11 @@
       <img :src="item.thumbnail" />
     </div>
     <div class="list-item__link-contaniner">
-      <router-link to="/info" @click="$emit('click')">
+      <router-link
+        class="list-item__link-container--link-more"
+        to="/info"
+        @click="$emit('click')"
+      >
         {{ $t("listItem.viewMore") }}
       </router-link>
     </div>
@@ -34,44 +38,46 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/_mixins.scss";
+
 .list-item {
   list-style: none;
   display: flex;
   align-items: center;
   margin-top: 1.5em;
-}
 
-.list-item:first-of-type {
-  margin-top: 0;
-}
+  &:first-of-type {
+    margin-top: 0;
+  }
 
-.list-item__info-container {
-  display: flex;
-  flex: 0 0 70%;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
+  &__info-container {
+    display: flex;
+    flex: 0 0 70%;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 
-.list-item__link-contaniner {
-  flex: 0 0 30%;
-}
+    &__title {
+      font-size: 1.5em;
+    }
 
-.list-item__info-container__title {
-  font-size: 1.5em;
-}
+    &__date {
+      font-size: 0.75em;
+    }
 
-.list-item__info-container__date {
-  font-size: 0.75em;
-}
+    &__description {
+      @include two-lines-text;
+    }
+  }
 
-.list-item__info-container__description {
-  display: block;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  &__link-contaniner {
+    flex: 0 0 30%;
+
+    &--link-more {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 </style>

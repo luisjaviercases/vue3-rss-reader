@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .search-input {
   margin-bottom: 0.5em;
 }

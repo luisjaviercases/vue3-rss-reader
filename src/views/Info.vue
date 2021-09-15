@@ -32,8 +32,10 @@ export default {
 };
 </script>
 
-<style scoped>
-.info__title {
-  font-size: 1.5em;
+<style lang="scss" scoped>
+.info {
+  &__title {
+    font-size: 1.5em;
+  }
 }
 </style>
