@@ -6,9 +6,9 @@
       <p class="list-item__info-container__description">
         {{ parseContent(item.description) }}
       </p>
-      <img :src="item.thumbnail" />
+      <img class="list-item__info-container__image" :src="item.thumbnail" />
     </div>
-    <div class="list-item__link-contaniner">
+    <div class="list-item__link-container">
       <router-link
         class="list-item__link-container--link-more"
         to="/info"
@@ -69,9 +69,13 @@ export default {
     &__description {
       @include two-lines-text;
     }
+
+    &__image {
+      max-width: 40em;
+    }
   }
 
-  &__link-contaniner {
+  &__link-container {
     flex: 0 0 30%;
 
     &--link-more {
