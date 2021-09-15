@@ -1,7 +1,7 @@
 <template>
   <Header />
   <GoBackButton />
-  <div class="info">
+  <div v-if="state.element" class="info">
     <span class="info__title">{{ state.element.title }}</span>
     <p class="info__description">
       {{ parseContent(state.element.description) }}
