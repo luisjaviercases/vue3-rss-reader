@@ -7,7 +7,7 @@ Testing vue3 doing a simple RSS Reader (with basic web styling, probably it will
 - Order ist ascending or descending by date
 - Click a result to view more of it in other view (using vue-router)
 - Internacionalization with i18n
-- Storage with Composition API (within VueX)
+- Storage with Composition API (without VueX)
 
 Used
 
