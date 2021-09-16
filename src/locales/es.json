@@ -1,0 +1,29 @@
+{
+  "goBackComponent": {
+    "back": "Atrás"
+  },
+  "switchLanguage": {
+    "select": "Seleccionar idioma"
+  },
+  "header": {
+    "title": "Lector RSS"
+  },
+  "listItem": {
+    "viewMore": "Ver más"
+  },
+  "searchInput": {
+    "placeholder": "Buscar...",
+    "description": "Filtrar por título: "
+  },
+  "elementList": {
+    "info": "Click para cambiar: ",
+    "orderTitle": "Ordenado ",
+    "ascending": "ascendentemente",
+    "descending": "descendentemente",
+    "loading": "Cargando...",
+    "noResultsToShow": "No hay resultados que mostrar"
+  },
+  "addFeedInput": {
+    "info": "Introduzca una URL válida de feed y presione la tecla enter: "
+  }
+}
